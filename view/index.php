@@ -19,7 +19,7 @@ require "header.php";
     <div class="carousel-item active">
     <a href="#"><img src="../imagens/banho.jpg" alt="Chuveiro" width="100%" height="350"></a>
       <div class="carousel-caption text-warning">
-        <h3>Banho</h3>
+        <h3>banheiros</h3>
         <p><strong>Tudo para o seu banho</strong></p>
       </div>
     </div>
