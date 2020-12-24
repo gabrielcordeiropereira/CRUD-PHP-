@@ -3,19 +3,21 @@ require "header.php";
 $_POST['acao']="listar";
 $recebe = require_once "../banco_dados/produtosControler.php";
 ?>
-
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
   <div class="container">
-    <table class="table">
+    
+    <table class="table" id="myTable">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">Codigo</th>
-          <th scope="col">Nome produto</th>
-          <th scope="col">Categoria produto</th>
-          <th scope="col">Marca produto</th>
-          <th scope="col">Estoque</th>
-          <th scope="col">Quantidade</th>
-          <th scope="col">Preco</th>
-          <th colspan="2">Ação</th>
+          <th>Codigo</th>
+          <th>Nome produto</th>
+          <th>Categoria produto</th>
+          <th>Marca produto</th>
+          <th>Estoque</th>
+          <th>Quantidade</th>
+          <th>Preco</th>
+          <th>Ação</th>
+          <th>alterar</th>
         </tr>
         
       </thead>
@@ -29,8 +31,8 @@ $recebe = require_once "../banco_dados/produtosControler.php";
           <td><?= $value['estoque']?> </td>
           <td><?= $value['quantidade']?> </td>
           <td><?= $value['preco']?> </td>
-          <td> <a href="../banco_dados/excluiProdutosBd.php?id=<?= $value['idProdutos']?>" class="btn btn-danger">Deletar</a></td>
-          <td><a href="#" class="btn btn-info">Editar</a></td>
+          <td><a href="../banco_dados/excluiProdutosBd.php?id=<?= $value['idProdutos']?>" class="btn btn-danger">Deletar</a></td>
+          <td><a href="editarProduto.php?id=<?= $value['idProdutos']?>" class="btn btn-info">Editar</a></td>
         </tr>
       <?php } ?>
       </tbody>
@@ -43,3 +45,10 @@ $recebe = require_once "../banco_dados/produtosControler.php";
 require "footer.php";
 
 ?>
+
+ 
+<script>
+  $(document).ready( function () {
+  $('#myTable').DataTable();
+  } );
+</script>

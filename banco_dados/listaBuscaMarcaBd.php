@@ -1,7 +1,7 @@
 <?php
 require "bd.php";
 
-$sqlMarcas = "Select * FROM marcas WHERE id_marcas = {$_GET['id']}";
+$sqlMarcas = "SELECT * FROM marcas WHERE id_marcas = {$_GET['id']}";
 $result = mysqli_query($link,$sqlMarcas);
 $lista_marcas = array();
 $cont = 0;
